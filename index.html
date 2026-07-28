@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anyone Relay Monitor — SSH monitoring &amp; AI auto-fix for Anyone Protocol relays</title>
+  <meta name="description" content="Real-time SSH monitoring, AI-powered auto-fix, and reward tracking for Anyone Protocol relay/exit node operators. Windows &amp; Linux.">
+  <link rel="icon" href="assets/icon.png">
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #12151b;
+      --border: #22262f;
+      --text: #e8e8f0;
+      --muted: #8a8f9c;
+      --accent: #7c6af7;
+      --accent2: #4caf50;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    header.top {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    header.top img { width: 32px; height: 32px; border-radius: 8px; }
+    header.top .name { font-weight: 700; font-size: 16px; }
+    .hero {
+      padding: 64px 0 40px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 40px;
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p.sub {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--panel);
+      transition: transform 0.1s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .trial-note { color: var(--muted); font-size: 13px; margin-top: 12px; }
+    .screenshot {
+      margin: 48px 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .screenshot img { display: block; width: 100%; height: auto; }
+    section.features {
+      padding: 40px 0 64px;
+    }
+    section.features h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card .icon { font-size: 22px; margin-bottom: 10px; }
+    .card h3 { margin: 0 0 8px; font-size: 15px; }
+    .card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+    section.platforms {
+      padding: 40px 0 80px;
+      text-align: center;
+    }
+    section.platforms h2 { font-size: 22px; margin-bottom: 8px; }
+    section.platforms p { color: var(--muted); margin-bottom: 28px; }
+    .platform-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .platform-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      min-width: 180px;
+    }
+    .platform-card .plat-icon { font-size: 28px; margin-bottom: 10px; }
+    .platform-card .plat-name { font-weight: 600; margin-bottom: 4px; }
+    .platform-card .plat-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <img src="assets/icon.png" alt="Anyone Relay Monitor">
+      <span class="name">Anyone Relay Monitor</span>
+    </header>
+
+    <div class="hero">
+      <h1>Stop SSH-ing into every relay <span>just to check if it's alive.</span></h1>
+      <p class="sub">Real-time monitoring, AI-powered auto-fix, and reward tracking for everyone running Anyone Protocol relay or exit nodes — across your whole fleet, from one dashboard.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://github.com/barisadiy1974-hub/anyone-relay-monitor-site/releases/latest" id="dl-windows">⬇ Download for Windows</a>
+        <a class="btn" href="https://github.com/barisadiy1974-hub/anyone-relay-monitor-site/releases/latest" id="dl-linux">⬇ Download for Linux</a>
+      </div>
+      <div class="trial-note">Free 14-day trial · no account required to try it</div>
+    </div>
+
+    <div class="screenshot">
+      <img src="assets/screenshot-dashboard.png" alt="Anyone Relay Monitor dashboard showing a relay card with live status">
+    </div>
+
+    <section class="features">
+      <h2>Everything you need to run a fleet, not just one box</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">📡</div>
+          <h3>Live SSH monitoring</h3>
+          <p>CPU, RAM, disk, bandwidth, connections and anon service status polled per relay — with flap dampening so a single blip doesn't page you.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3>AI auto-fix</h3>
+          <p>When a relay goes offline or its service dies, the app can diagnose and run the fix automatically — restart services, clear stuck states, and more.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💰</div>
+          <h3>Real reward tracking</h3>
+          <p>On-chain hourly/daily ANYONE earnings per relay, plus a low-earning relay detector that flags peers falling behind the fleet median.</p>
+        </div>
+        <div class="card">
+          <div class="icon">👪</div>
+          <h3>MyFamily automation</h3>
+          <p>Collect fingerprints across your fleet and apply a correct, up-to-date MyFamily line to every relay in one click.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛡</div>
+          <h3>Security hardening</h3>
+          <p>Scan your fleet for fail2ban status and SSH exposure, then harden risky relays against SSH-flood and brute-force attacks in bulk.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔥</div>
+          <h3>Uptime streak &amp; tier tracking</h3>
+          <p>See which relays are close to leveling up a reward tier — and which ones you really don't want to go offline this week.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="platforms">
+      <h2>Available now</h2>
+      <p>Pick your platform — installs in under a minute.</p>
+      <div class="platform-row">
+        <div class="platform-card">
+          <div class="plat-icon">🪟</div>
+          <div class="plat-name">Windows</div>
+          <div class="plat-sub">Portable .exe, no install needed</div>
+          <a class="btn primary" href="https://github.com/barisadiy1974-hub/anyone-relay-monitor-site/releases/latest">Download</a>
+        </div>
+        <div class="platform-card">
+          <div class="plat-icon">🐧</div>
+          <div class="plat-name">Linux (x64)</div>
+          <div class="plat-sub">AppImage</div>
+          <a class="btn primary" href="https://github.com/barisadiy1974-hub/anyone-relay-monitor-site/releases/latest">Download</a>
+        </div>
+        <div class="platform-card">
+          <div class="plat-icon">🐧</div>
+          <div class="plat-name">Linux (ARM64)</div>
+          <div class="plat-sub">AppImage — Raspberry Pi &amp; ARM servers</div>
+          <a class="btn primary" href="https://github.com/barisadiy1974-hub/anyone-relay-monitor-site/releases/latest">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Anyone Relay Monitor is an independent tool for Anyone Protocol relay operators — not affiliated with the Anyone Protocol project.
+    </footer>
+  </div>
+</body>
+</html>
