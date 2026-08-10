@@ -8,6 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/barisadiy1974-hub/relaypulse/releases/latest">Download</a> ·
+  <a href="GUIDE.md">User Guide</a> ·
   <a href="https://barisadiy1974-hub.github.io/relaypulse">Website</a>
 </p>
 
