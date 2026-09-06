@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RelayPulse — SSH monitoring &amp; AI auto-fix for Anyone Protocol relays</title>
-  <meta name="description" content="RelayPulse: real-time SSH monitoring, AI-powered auto-fix, and reward tracking for Anyone Protocol relay/exit node operators. Windows &amp; Linux.">
+  <meta name="description" content="RelayPulse: real-time SSH monitoring, AI-powered auto-fix, and reward tracking for Anyone Protocol relay/exit node operators. Mac, iPhone, Windows and Linux.">
   <link rel="icon" href="assets/icon.png">
   <style>
     :root {
@@ -94,6 +94,39 @@
     .card .icon { font-size: 22px; margin-bottom: 10px; }
     .card h3 { margin: 0 0 8px; font-size: 15px; }
     .card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+    section.shots { padding: 8px 0 56px; }
+    section.shots h2 { text-align: center; font-size: 26px; margin-bottom: 32px; }
+    .shot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .shot-grid figure { margin: 0; }
+    .shot-grid img {
+      display: block; width: 100%; height: auto;
+      border-radius: 12px; border: 1px solid var(--border);
+    }
+    .shot-grid figcaption { color: var(--muted); font-size: 13px; margin-top: 10px; }
+
+    section.apple {
+      padding: 48px 0 56px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    section.apple h2 { text-align: center; font-size: 26px; margin: 0 0 12px; }
+    .apple-sub { text-align: center; color: var(--muted); max-width: 640px; margin: 0 auto 36px; }
+    .apple-row { display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .apple-copy { flex: 1 1 380px; max-width: 520px; }
+    .apple-points { list-style: none; padding: 0; margin: 0 0 20px; }
+    .apple-points li { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 10px; }
+    .apple-points li b { color: var(--text); }
+    .apple-points li::before {
+      content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); margin-right: 12px; vertical-align: middle;
+    }
+    .phone {
+      flex: 0 0 auto; width: 240px;
+      border: 8px solid #14161b; border-radius: 34px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+    }
+    .phone video { display: block; width: 100%; height: auto; }
+
     section.platforms {
       padding: 40px 0 80px;
       text-align: center;
@@ -129,10 +162,11 @@
 
     <div class="hero">
       <h1>Stop SSH-ing into every relay <span>just to check if it's alive.</span></h1>
-      <p class="sub">Real-time monitoring, AI-powered auto-fix, and reward tracking for everyone running Anyone Protocol relay or exit nodes — across your whole fleet, from one dashboard.</p>
+      <p class="sub">Real-time monitoring, AI-powered auto-fix, and reward tracking for everyone running Anyone Protocol relay or exit nodes — across your whole fleet, from one dashboard. On Mac, iPhone, Windows and Linux.</p>
       <div class="cta-row">
         <a class="btn primary" href="https://github.com/barisadiy1974-hub/relaypulse/releases/latest" id="dl-windows">⬇ Download for Windows</a>
         <a class="btn" href="https://github.com/barisadiy1974-hub/relaypulse/releases/latest" id="dl-linux">⬇ Download for Linux</a>
+        <a class="btn" href="#apple" id="apple-soon">🍎 Mac &amp; iPhone</a>
         <a class="btn" href="https://github.com/barisadiy1974-hub/relaypulse/blob/main/GUIDE.md" id="user-guide">📖 User Guide</a>
       </div>
       <div class="trial-note">Free 14-day trial · no account required to try it</div>
@@ -140,7 +174,7 @@
     </div>
 
     <div class="screenshot">
-      <img src="assets/screenshot-dashboard.png" alt="RelayPulse dashboard showing a relay card with live status">
+      <img src="assets/mac-dashboard.png" alt="RelayPulse fleet dashboard showing live status for every relay">
     </div>
 
     <section class="features">
@@ -179,9 +213,43 @@
       </div>
     </section>
 
+    <section class="shots">
+      <h2>The whole fleet, not one box at a time</h2>
+      <div class="shot-grid">
+        <figure>
+          <img src="assets/mac-network-map.png" alt="Network map showing where the fleet is concentrated" loading="lazy">
+          <figcaption>See where your fleet is concentrated — and where it is too concentrated.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/mac-config-editor.png" alt="Editing anonrc across the fleet without a terminal" loading="lazy">
+          <figcaption>Edit anonrc across every relay without opening a terminal.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="apple" id="apple">
+      <h2>Coming to the App Store</h2>
+      <p class="apple-sub">RelayPulse for Mac and iPhone is submitted and waiting for Apple's review.
+        One purchase covers both — buy it once, use it on your Mac and your phone.</p>
+      <div class="apple-row">
+        <div class="apple-copy">
+          <ul class="apple-points">
+            <li><b>Free for up to 3 relays.</b> No trial countdown, no account — the free tier is the whole app, just a smaller fleet.</li>
+            <li><b>One-time purchase</b> to lift the limit. No subscription.</li>
+            <li><b>Mac and iPhone together.</b> Buy on either, it unlocks on both.</li>
+            <li>Alerts on your phone the moment a node really goes down — not on every dropped packet.</li>
+          </ul>
+          <p class="trial-note">Want to test it before release? <a href="mailto:baris.adiy1974@gmail.com" style="color:var(--accent)">Email me</a> and I will send you a TestFlight invite.</p>
+        </div>
+        <div class="phone">
+          <video src="assets/demo-iphone.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+    </section>
+
     <section class="platforms">
-      <h2>Available now</h2>
-      <p>Pick your platform — installs in under a minute.</p>
+      <h2>Download now</h2>
+      <p>Windows and Linux are available today — installs in under a minute.</p>
       <div class="platform-row">
         <div class="platform-card">
           <div class="plat-icon">🪟</div>
