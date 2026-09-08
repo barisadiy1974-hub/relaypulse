@@ -20,12 +20,13 @@
 <body>
 
 <h1>RelayPulse — Privacy Policy</h1>
-<p class="updated">Last updated: 4 September 2026 · Applies to RelayPulse for iPhone and RelayPulse for macOS</p>
+<p class="updated">Last updated: 8 September 2026 · Applies to RelayPulse for iPhone and RelayPulse for macOS</p>
 
 <div class="box">
 <strong>The short version:</strong> RelayPulse has no backend. We operate no servers, we
-receive no data from the app, and we have no account system. The app talks only to the
-servers <em>you</em> configure, and everything it stores stays on your own device.
+receive no data from the app, and we have no account system. Everything the app stores
+stays on your own device. Monitoring traffic goes only to the servers <em>you</em>
+configure; the app also reads a few public sources, listed in full below.
 </div>
 
 <h2>What the app connects to</h2>
@@ -34,8 +35,13 @@ destinations you enter yourself:</p>
 <ul>
   <li><strong>Your relay servers</strong> — over SSH, and/or over HTTPS to the optional
       monitoring agent you install on them.</li>
-  <li><strong>RelayPulse on your Mac</strong> (iPhone app only, optional) — over your local
-      network, to read the fleet status your Mac has already collected.</li>
+  <li><strong>Public reference data</strong> (macOS app) — the Anyone Protocol public API
+      for network-wide figures, a public Ethereum RPC and public price APIs to show what
+      your addresses have earned, a public IP lookup service (ifconfig.me, api.ipify.org
+      or icanhazip.com) to show your server's outward address, and a third-party RSS proxy
+      (rsshub.app, with rsshub.pseudoyu.com and rss.noleron.com as fallbacks) for the
+      Anyone news feed. These are read-only requests with no credentials, but the services
+      do see the requesting IP address.</li>
   <li><strong>Your AI provider</strong> (optional) — only if you enable AI-assisted
       diagnosis and supply your own API key. In that case the error message and recent log
       lines from the affected server are sent to OpenAI or Anthropic under your own account
@@ -43,7 +49,8 @@ destinations you enter yourself:</p>
   <li><strong>Public Anyone Protocol pages</strong> — the in-app links to the Anyone
       dashboard, blog and social accounts open normally in a web view.</li>
 </ul>
-<p>There is no RelayPulse server anywhere in that list. Nothing is proxied through us.</p>
+<p>There is no RelayPulse server anywhere in that list. Nothing is proxied through us,
+and none of these requests carry your keys, your server list or your measurements.</p>
 
 <h2>What is stored, and where</h2>
 <p>All of it stays on your device. Nothing is uploaded to us.</p>
@@ -67,19 +74,23 @@ servers, your keys, your measurements, or even whether you use the app.</p>
 
 <h2>Demo mode</h2>
 <p>The app ships with a "Demo data" switch that fills the screens with a fictional sample
-fleet so you can look around before adding real servers. While demo mode is on, the app
-makes no network connections at all. The sample addresses are from the ranges reserved for
-documentation (RFC 5737) and belong to no real machine.</p>
+fleet so you can look around before adding real servers. While demo mode is on, no relay
+is contacted: no SSH session is opened and no monitoring agent is queried. The public
+sources listed above still work, so the news and network-statistics panels are not blank.
+The sample addresses are from the ranges reserved for documentation (RFC 5737) and belong
+to no real machine.</p>
 
 <h2>Local network access (iPhone)</h2>
-<p>iOS asks for permission to find devices on your local network. RelayPulse uses this only
-to reach RelayPulse running on your own Mac, at the address you type in yourself. It does
-not scan or enumerate your network.</p>
+<p>If a relay you add happens to be on your own local network, iOS asks for permission
+before the app can reach it. RelayPulse only contacts the address you typed in. It does
+not scan, enumerate or discover devices on your network.</p>
 
 <h2>Data sharing</h2>
-<p>We do not sell, share, rent, or transfer any data, because we never receive any. The only
-data leaving your device goes to the servers you configured, and — if you explicitly enable
-it — to the AI provider whose key you supplied.</p>
+<p>We do not sell, share, rent, or transfer any data, because we never receive any. Data
+about your fleet leaves your device only to the servers you configured, and — if you
+explicitly enable it — to the AI provider whose key you supplied. The public sources listed
+above receive an ordinary web request and nothing about you beyond the IP address any web
+request carries.</p>
 
 <h2>Children</h2>
 <p>RelayPulse is a technical administration tool intended for adults who operate their own
