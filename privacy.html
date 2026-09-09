@@ -35,19 +35,19 @@ destinations you enter yourself:</p>
 <ul>
   <li><strong>Your relay servers</strong> — over SSH, and/or over HTTPS to the optional
       monitoring agent you install on them.</li>
-  <li><strong>Public reference data</strong> (macOS app) — the Anyone Protocol public API
-      for network-wide figures, a public Ethereum RPC and public price APIs to show what
+  <li><strong>Public reference data</strong> (macOS app) — a public network-statistics
+      API (api.ec.anyone.tech) for network-wide figures, a public Ethereum RPC and public price APIs to show what
       your addresses have earned, a public IP lookup service (ifconfig.me, api.ipify.org
       or icanhazip.com) to show your server's outward address, and a third-party RSS proxy
       (rsshub.app, with rsshub.pseudoyu.com and rss.noleron.com as fallbacks) for the
-      Anyone news feed. These are read-only requests with no credentials, but the services
+      news feed. These are read-only requests with no credentials, but the services
       do see the requesting IP address.</li>
   <li><strong>Your AI provider</strong> (optional) — only if you enable AI-assisted
       diagnosis and supply your own API key. In that case the error message and recent log
       lines from the affected server are sent to OpenAI or Anthropic under your own account
       and their privacy policy. This feature is off unless you turn it on.</li>
-  <li><strong>Public Anyone Protocol pages</strong> — the in-app links to the Anyone
-      dashboard, blog and social accounts open normally in a web view.</li>
+  <li><strong>Public project pages</strong> — shortcut links in the app (a status
+      dashboard, a blog and social accounts) open normally in a web view.</li>
 </ul>
 <p>There is no RelayPulse server anywhere in that list. Nothing is proxied through us,
 and none of these requests carry your keys, your server list or your measurements.</p>
