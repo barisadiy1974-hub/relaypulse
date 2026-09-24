@@ -151,6 +151,9 @@
       color: var(--muted);
       font-size: 13px;
     }
+      .apple-steps { padding-left: 20px; line-height: 1.7; }
+    .apple-steps li { margin: 4px 0; }
+    #one-purchase { margin-top: 28px; font-size: 20px; }
   </style>
 </head>
 <body>
@@ -229,18 +232,35 @@
     </section>
 
     <section class="apple" id="apple">
-      <h2>Coming to the App Store</h2>
-      <p class="apple-sub">RelayPulse for Mac and iPhone is submitted and waiting for Apple's review.
+      <h2>On the App Store</h2>
+      <p class="apple-sub">RelayPulse for iPhone is on the App Store; the Mac version is in Apple's review.
         One purchase covers both — buy it once, use it on your Mac and your phone.</p>
       <div class="apple-row">
         <div class="apple-copy">
           <ul class="apple-points">
-            <li><b>Free for up to 3 relays.</b> No trial countdown, no account — the free tier is the whole app, just a smaller fleet.</li>
+            <li><b>Free for up to 3 servers.</b> No account, nothing expires — the free tier is the whole app, just a smaller fleet.</li>
             <li><b>One-time purchase</b> to lift the limit. No subscription.</li>
-            <li><b>Mac and iPhone together.</b> Buy on either, it unlocks on both.</li>
-            <li>Alerts on your phone the moment a node really goes down — not on every dropped packet.</li>
+            <li><b>Mac and iPhone together.</b> Buy on either one, it unlocks both.</li>
+            <li>Alerts on your phone the moment a server really goes down — not on every dropped packet.</li>
           </ul>
-          <p class="trial-note">Want to test it before release? <a href="mailto:baris.adiy1974@gmail.com" style="color:var(--accent)">Email me</a> and I will send you a TestFlight invite.</p>
+          <p><a class="btn primary" href="https://apps.apple.com/app/id6808128260">Get it for iPhone</a></p>
+
+          <h3 id="one-purchase">Bought it on one device? Unlock the other</h3>
+          <p>The purchase belongs to your Apple Account, not to one device, so it unlocks RelayPulse on both
+            your iPhone and your Mac. On the device you did <em>not</em> buy on:</p>
+          <ol class="apple-steps">
+            <li>Install RelayPulse from the App Store and open it.</li>
+            <li><b>iPhone:</b> Settings → License → <b>Restore Purchases</b>.<br>
+                <b>Mac:</b> Settings → General → <b>Restore Purchases</b> — or on the Unlock screen, <b>Restore Purchase</b>.</li>
+            <li>If you are asked, sign in with the <b>same Apple Account</b> you bought with.</li>
+            <li>It unlocks within a few seconds: the iPhone shows <b>RelayPulse Lifetime</b>, the Mac shows
+                <b>Unlocked — unlimited servers</b>.</li>
+          </ol>
+          <p class="trial-note">Still locked? Check that both devices use the same Apple Account for App Store purchases
+            (iPhone: Settings → your name → Media &amp; Purchases; Mac: App Store → Account), then tap Restore again.
+            Nothing is charged twice — restoring never buys anything.</p>
+
+          <p class="trial-note">Want to try the Mac version before release? <a href="mailto:baris.adiy1974@gmail.com" style="color:var(--accent)">Email me</a> and I will send you a TestFlight invite.</p>
         </div>
         <div class="phone">
           <video src="assets/demo-iphone.mp4" autoplay muted loop playsinline></video>
