@@ -72,6 +72,16 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
     .screenshot img { display: block; width: 100%; height: auto; }
+    section.demo { padding: 8px 0 8px; }
+    section.demo h2 { text-align: center; font-size: 26px; margin-bottom: 8px; }
+    section.demo p.demo-sub { text-align: center; color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+    .demo-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .demo-frame video { display: block; width: 100%; height: auto; background: #000; }
     section.features {
       padding: 40px 0 64px;
     }
@@ -180,6 +190,18 @@
     <div class="screenshot">
       <img src="assets/mac-dashboard.png" alt="RelayPulse fleet dashboard showing live status for every relay">
     </div>
+
+    <section class="demo" id="demo">
+      <h2>See it run</h2>
+      <p class="demo-sub">Forty seconds through the fleet dashboard: online, warning and offline relays, side by side.</p>
+      <div class="demo-frame">
+        <video src="assets/demo-relaypulse.mp4"
+               poster="assets/mac-dashboard.png"
+               controls preload="metadata" playsinline
+               aria-label="RelayPulse demo: the fleet dashboard separating online, warning and offline relays"></video>
+      </div>
+      <p class="demo-sub" style="margin-top:12px">Recorded with demo data — no real fleet is shown.</p>
+    </section>
 
     <section class="features">
       <h2>Everything you need to run a fleet, not just one box</h2>
