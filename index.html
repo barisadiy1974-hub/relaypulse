@@ -164,6 +164,14 @@
       .apple-steps { padding-left: 20px; line-height: 1.7; }
     .apple-steps li { margin: 4px 0; }
     #one-purchase { margin-top: 28px; font-size: 20px; }
+    section.port { padding: 40px 0 8px; border-top: 1px solid var(--border); }
+    section.port h2 { text-align: center; font-size: 22px; margin: 0 0 8px; }
+    .port-sub { text-align: center; color: var(--muted); max-width: 640px; margin: 0 auto 20px; }
+    .port-box { max-width: 640px; margin: 0 auto; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+    .port-box p, .port-box li { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .port-box b { color: var(--text); }
+    .port-box pre { background: #0b0d12; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 8px 0 14px; overflow-x: auto; }
+    .port-box code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; color: var(--text); }
   </style>
 </head>
 <body>
@@ -175,15 +183,16 @@
 
     <div class="hero">
       <h1>Stop SSH-ing into every relay <span>just to check if it's alive.</span></h1>
-      <p class="sub">Reach every Linux server you run over SSH without opening a terminal. Real-time health monitoring, alerts that fire on real outages, and AI-powered auto-fix — across your whole fleet, from one dashboard. On Mac, iPhone, Windows and Linux.</p>
+      <p class="sub">Reach every Linux server you run over SSH without opening a terminal. Real-time health monitoring, alerts that fire on real outages, and AI-powered auto-fix — across your whole fleet, from one dashboard. On Mac, iPhone, Android, Windows and Linux.</p>
       <div class="cta-row">
         <a class="btn primary" href="https://github.com/barisadiy1974-hub/relaypulse-app/releases/latest" id="dl-windows">⬇ Download for Windows</a>
         <a class="btn" href="https://github.com/barisadiy1974-hub/relaypulse-app/releases/latest" id="dl-linux">⬇ Download for Linux</a>
+        <a class="btn" href="https://github.com/barisadiy1974-hub/relaypulse-android/releases/latest" id="dl-android">🤖 Android</a>
         <a class="btn" href="#apple" id="apple-soon">🍎 Mac &amp; iPhone</a>
         <a class="btn" href="https://github.com/barisadiy1974-hub/relaypulse/blob/main/GUIDE.md" id="user-guide">📖 User Guide</a>
         <a class="btn" href="setup.html" id="ssh-setup">🔑 SSH key setup</a>
       </div>
-      <div class="trial-note">Free on Windows and Linux · no account, no license key, no time limit</div>
+      <div class="trial-note">Free on Windows, Linux and Android · no account, no license key, no time limit</div>
       <div class="trial-note">🔍 It wants your SSH keys, so the code is public — <a href="https://github.com/barisadiy1974-hub/relaypulse-app" style="color:var(--accent)">read it before you run it</a></div>
     </div>
 
@@ -292,7 +301,7 @@
 
     <section class="platforms">
       <h2>Download now</h2>
-      <p>Windows and Linux are available today — installs in under a minute.</p>
+      <p>Windows, Linux and Android are available today — installs in under a minute.</p>
       <div class="platform-row">
         <div class="platform-card">
           <div class="plat-icon">🪟</div>
@@ -303,7 +312,7 @@
         <div class="platform-card">
           <div class="plat-icon">🐧</div>
           <div class="plat-name">Linux (x64)</div>
-          <div class="plat-sub">AppImage</div>
+          <div class="plat-sub">.deb for Ubuntu/Debian, or AppImage</div>
           <a class="btn primary" href="https://github.com/barisadiy1974-hub/relaypulse-app/releases/latest">Download</a>
         </div>
         <div class="platform-card">
@@ -312,12 +321,37 @@
           <div class="plat-sub">AppImage — Raspberry Pi &amp; ARM servers</div>
           <a class="btn primary" href="https://github.com/barisadiy1974-hub/relaypulse-app/releases/latest">Download</a>
         </div>
+        <div class="platform-card">
+          <div class="plat-icon">🤖</div>
+          <div class="plat-name">Android</div>
+          <div class="plat-sub">APK — Android 8 and newer</div>
+          <a class="btn primary" href="https://github.com/barisadiy1974-hub/relaypulse-android/releases/latest">Download</a>
+        </div>
+      </div>
+      <p class="trial-note">Android: the app isn't on Google Play yet, so Play Protect shows "App blocked to protect your device".
+        Tap <b>Install anyway</b> (the small text above "Got it"). Your relays move over with
+        Settings → <b>Export for phone</b> on the desktop (called "Export for iPhone…" up to 1.8.17), then <b>Import fleet file</b> on the phone.</p>
+    </section>
+
+    <section class="port" id="agent-port">
+      <h2>Phone apps need the agent port: TCP 19191</h2>
+      <p class="port-sub">Windows, Linux, Mac, iPhone and Android all read your servers through the RelayPulse HTTPS agent on port 19191.
+        If a firewall blocks it, the desktop quietly falls back to SSH — but a phone has no SSH login, so it shows "Timed out".</p>
+      <div class="port-box">
+        <p><b>1. Open it on every server</b> (as root):</p>
+        <pre><code>ufw allow 19191/tcp</code></pre>
+        <p><b>2. Open it at your VPS provider too.</b> Many providers have a firewall in their web panel that sits
+          in front of the server. Allow incoming <b>TCP 19191</b> there as well — <code>ufw</code> can't change that one.</p>
+        <p><b>3. Check it.</b> In the app, the server card turns green and shows the agent as the source.</p>
+        <p><b>Is it safe to open?</b> Yes. The agent answers only requests that carry that server's own random token,
+          it is read-only (CPU, memory, traffic and service status), it cannot run commands, and the apps pin its
+          certificate on first contact so the token is never sent to anyone else.</p>
       </div>
     </section>
 
     <footer>
       RelayPulse is an independent tool. It is not affiliated with, endorsed by or sponsored by any of the projects it can be used to administer.
-      <br><a href="https://github.com/barisadiy1974-hub/relaypulse/blob/main/GUIDE.md" style="color:var(--accent)">User guide</a> · <a href="setup.html" style="color:var(--accent)">SSH key setup</a> · <a href="https://github.com/barisadiy1974-hub/relaypulse-app" style="color:var(--accent)">Source code</a> · <a href="https://github.com/barisadiy1974-hub/relaypulse-app/releases/latest" style="color:var(--accent)">Releases</a>
+      <br><a href="https://github.com/barisadiy1974-hub/relaypulse/blob/main/GUIDE.md" style="color:var(--accent)">User guide</a> · <a href="setup.html" style="color:var(--accent)">SSH key setup</a> · <a href="https://github.com/barisadiy1974-hub/relaypulse-app" style="color:var(--accent)">Source code</a> · <a href="https://github.com/barisadiy1974-hub/relaypulse-app/releases/latest" style="color:var(--accent)">Releases</a> · <a href="https://github.com/barisadiy1974-hub/relaypulse-android" style="color:var(--accent)">Android</a> · <a href="#agent-port" style="color:var(--accent)">Agent port 19191</a>
       <br>Questions or support: <a href="mailto:baris.adiy1974@gmail.com" style="color:var(--accent)">baris.adiy1974@gmail.com</a>
     </footer>
   </div>
